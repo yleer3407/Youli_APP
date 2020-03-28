@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.health.HomeMenuActivity;
 import com.example.health.R;
 import com.example.health.bean.FoodBean;
 
@@ -20,7 +22,7 @@ public class FoodDescActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_desc);
         initView();
         //接受上一级传来数据
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         FoodBean foodBean = (FoodBean) intent.getSerializableExtra("food");
         //设置显示控件
         titleTv1.setText(foodBean.getTitle());
@@ -28,6 +30,14 @@ public class FoodDescActivity extends AppCompatActivity {
         descTv.setText(foodBean.getDesc());
         notTv.setText(foodBean.getNotmatch());
         bigPicIv.setImageResource(foodBean.getPicId());
+        Button button01 = findViewById(R.id.btn_cooking);
+        button01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(FoodDescActivity.this, HomeMenuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {
@@ -45,4 +55,5 @@ public class FoodDescActivity extends AppCompatActivity {
         });
 
     }
+
 }
