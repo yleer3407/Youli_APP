@@ -23,12 +23,12 @@ public class HomeMenuActivity extends AppCompatActivity {
             case R.id.home_btn1:
                 intent.setClass(HomeMenuActivity.this, InfoListActivity.class);
                 break;
-            case R.id.home_btn2:
-                intent.setClass(HomeMenuActivity.this, FoodGridActivity.class);
-                break;
-            case R.id.home_btn3:
-                intent.setClass(HomeMenuActivity.this,AboutActivity.class);
-                break;
+            //case R.id.home_btn2:
+            //intent.setClass(HomeMenuActivity.this, FoodGridActivity.class);
+            //    break;
+            //case R.id.home_btn3:
+            //    intent.setClass(HomeMenuActivity.this,AboutActivity.class);
+            //    break;
         }
         startActivity(intent);
     }

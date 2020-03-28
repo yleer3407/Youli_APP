@@ -60,11 +60,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 //初始化数据
     private void initData() {
+
         //请求网络必须在子线程
         new  Thread(new Runnable() {
             @Override
             public void run() {
-                String data = getDataFromServer();
+                String httpUrl = "http://api.tianapi.com/txapi/caipu/index?key=d5ab920c102f3066881ec1aa918db465&page=1";
+                String data = request(httpUrl);
+                System.out.println(data);
                 Log.i("MainActivity",":获取数据为:"+data);
                 //创建信息对象
                 Message message = Message.obtain();
@@ -78,35 +81,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }).start();
     }
 //从服务器获取数据
-    private String getDataFromServer() {
-        try {
-            //1.创建URL
-            URL url = new URL("https://v1.hitokoto.cn/?c=f&encode=text");
-            //2.打开链接
-            connection = (HttpURLConnection) url.openConnection();
-            //3.判断并处理结果
-            if(connection.getResponseCode()==200){
-                //获取输入流
-                inputStream = connection.getInputStream();
-                bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                StringBuilder stringBuilder = new StringBuilder();
-                for (String line="";(line= bufferedReader.readLine())!=null;){
-                    stringBuilder.append(line);
-                }
-                return stringBuilder.toString();
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            try {
-            if (bufferedReader!=null)bufferedReader.close();
-            if (inputStream!=null)inputStream.close();
-            if (connection!=null)connection.disconnect();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        return "";
 
+    private String request(String httpUrl) {
+        BufferedReader reader = null;
+        String result = null;
+        StringBuffer sbf = new StringBuffer();
+        httpUrl = httpUrl ;
+
+        try {
+            URL url = new URL(httpUrl);
+            HttpURLConnection connection = (HttpURLConnection) url
+                    .openConnection();
+            connection.setRequestMethod("GET");
+            InputStream is = connection.getInputStream();
+            reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            String strRead = null;
+            while ((strRead = reader.readLine()) != null) {
+                sbf.append(strRead);
+                sbf.append("\r\n");
+            }
+            reader.close();
+            result = sbf.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 }

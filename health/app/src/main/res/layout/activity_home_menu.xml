@@ -4,34 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/bg003"
     tools:context=".HomeMenuActivity"
-    android:background="@mipmap/home_page"
     android:orientation="vertical"
     android:padding="20dp">
-
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/youli"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"/>
     <Button
         android:id="@+id/home_btn1"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@mipmap/btn_food_list"
-        android:layout_marginTop="180dp"
+        android:background="#5CACEE"
+        android:layout_marginTop="20dp"
         android:onClick="onClick"
+        android:text="进入菜单"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="30dp"
         />
-    <Button
-        android:id="@+id/home_btn2"
+
+    <ImageView
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@mipmap/btn_food_nutriction"
-        android:layout_marginTop="40dp"
-        android:onClick="onClick"
-        />
-    <Button
-        android:id="@+id/home_btn3"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@mipmap/btn_food_about"
-        android:layout_marginTop="40dp"
-        android:onClick="onClick"
+        android:layout_height="300dp"
+        android:src="@mipmap/i2000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="蓝牙设备连接中..."
+        android:textColor="#1C86EE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="1dp"
+        android:layout_gravity="center"
         />
 
 </LinearLayout>

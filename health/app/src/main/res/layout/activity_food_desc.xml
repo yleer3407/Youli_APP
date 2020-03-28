@@ -71,5 +71,12 @@
             android:text="韭菜"
             android:layout_marginLeft="20dp"
             android:textSize="16sp"/>
+        <Button
+            android:id="@+id/btn_cooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="开始烹饪吧"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
     </LinearLayout>
 </ScrollView>

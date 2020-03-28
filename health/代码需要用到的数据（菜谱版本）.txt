@@ -1,12 +1,4 @@
-package com.example.health.bean;
-
-import com.example.health.R;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class foodUtils {
-    private static final String[] food = { "红烧肉", "猪肝", "猪血", "羊肉", "牛肉", "牛肝", "鹅肉", "兔肉", "狗肉",
+﻿private static final String[] food = { "红烧肉", "猪肝", "猪血", "羊肉", "牛肉", "牛肝", "鹅肉", "兔肉", "狗肉",
             "鸭肉", "鸡肉", "驴肉", "鸡蛋", "鲤鱼", "黄鱼", "虾", "虾皮", "螃蟹", "蛤", "鳖肉",
             "田螺", "大蒜", "葱", "萝卜", "芹菜", "韭菜", "菠菜", "莴笋", "竹笋", "西红柿", "洋葱",
             "醋", "茶", "豆浆", "红糖", "蜂蜜", "牛奶", "白酒", "啤酒" };
@@ -70,14 +62,5 @@ public class foodUtils {
             "白酒主要由水乙醇和少量微量元素组成。夜晚服用少量的白酒，可平缓的促进血液循环，起到催眠作用。饮少量白酒可刺激胃液分泌与唾液分泌，因而起到健胃和止疼痛、利小便及驱虫的作用。白酒味苦、甘、辛，性温，有毒，入心、肝、肺、胃经。",
             "啤酒营养丰富，其中含有丰富的氨基酸，是原料大麦含有的蛋白质经过酶的作用分解而产生的。且啤酒中还含有多种维生素。适量饮啤酒有强心、利尿、健胃的功效。"};
 
+    
 
-    public static List<FoodBean> gatAllFoodList(){
-        List<FoodBean>list = new ArrayList<>();
-        for (int b=0;b<food.length;b++){
-            FoodBean bean = new FoodBean(food[b],food1[b],foodjianjie[b],resId[b]);
-            list.add(bean);
-        }
-        return list;
-    }
-
-}
