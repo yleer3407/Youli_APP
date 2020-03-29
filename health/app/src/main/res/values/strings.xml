@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">health</string>
     <string name="title_activity_cooking">cooking</string>
+    <style name="height01">150</style>
+    <style name="height02">700</style>
+    <string name="step1">1.猪肉洗净切成大块，保证每块都有皮和肥瘦肉；葱洗净切段，姜洗净切片</string>
+    <string name="step2">2.炒锅烧热，码入肉块用中火煎炸，不间断翻动，煎至金黄色盛出</string>
+    <string name="step3">3.锅中留底油，倒入冰糖小火烧至黄色，倒入猪肉锅拌均匀。</string>
+    <string name="step4">4.葱.姜、大料、干辣椒入锅，加入料酒、酱油和温水。煮沸40分钟左右，肉熟烂、汤汁收浓即可</string>
 </resources>

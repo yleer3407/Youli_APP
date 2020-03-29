@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.health.HomeMenuActivity;
 import com.example.health.R;
 import com.example.health.bean.FoodBean;
+import com.example.health.cooking.Cook;
 
 public class FoodDescActivity extends AppCompatActivity {
     TextView titleTv1,titleTv2,descTv,notTv;
@@ -34,8 +35,8 @@ public class FoodDescActivity extends AppCompatActivity {
         button01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent4 = new Intent(FoodDescActivity.this, HomeMenuActivity.class);
-                startActivity(intent);
+            Intent cook = new Intent(FoodDescActivity.this, Cook.class);
+            startActivity(cook);
             }
         });
     }

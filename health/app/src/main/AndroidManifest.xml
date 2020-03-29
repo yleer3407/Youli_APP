@@ -9,10 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".cooking.cooking"
-            android:label="@string/title_activity_cooking"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".cooking.Cook"></activity>
         <activity android:name=".AboutActivity" />
         <activity android:name=".food_grid.FoodDescActivity" />
         <activity android:name=".food_grid.FoodGridActivity" />
